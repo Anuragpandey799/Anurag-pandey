@@ -1,10 +1,11 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FiPhone, FiMail, FiSend } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 function Contact({ dark }) {
   const form = useRef();
-  const [buttonText, setButtonText] = useState("Send Enquiry");
+  const [buttonText, setButtonText] = useState("Send Message");
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -15,188 +16,185 @@ function Contact({ dark }) {
       })
       .then(
         () => {
-          setButtonText("Enquiry Sent ✅");
-          // alert("Thank you! Your message has been sent successfully.");
-          e.target.reset(); // Clear the form
+          setButtonText("Sent Successfully ✓");
+          e.target.reset();
 
-          setTimeout(() => {
-            setButtonText("Send Enquiry");
-          }, 3000);
+          setTimeout(() => setButtonText("Send Message"), 3000);
         },
-        (error) => {
-          console.error("FAILED:", error);
-          setButtonText("Failed! Retry 🔁");
-
-          setTimeout(() => setButtonText("Send Enquiry"), 3000);
+        () => {
+          setButtonText("Error! Try Again");
+          setTimeout(() => setButtonText("Send Message"), 3000);
         }
       );
   };
 
   return (
     <section
-      className={`min-h-screen py-16 px-6 sm:px-12 ${
+      className={`min-h-screen py-20 px-6 sm:px-12 transition-all duration-500 ${
         dark
-          ? "bg-gradient-to-br from-blue-950 via-slate-900 to-black text-white"
+          ? "bg-gradient-to-br from-[#020617] via-[#0f172a] to-black text-white"
           : "bg-gradient-to-br from-gray-100 via-white to-gray-300 text-gray-900"
       }`}
     >
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left Side */}
-        <div data-aos="fade-up">
-          <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-600">
-            Let’s Connect!
-          </h2>
-          <p className="text-lg mb-6 leading-relaxed">
-            Whether you have a project in mind, a collaboration opportunity, or
-            just want to say hello, I'm excited to hear from you. Fill out the
-            form and I'll get back to you shortly!
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="max-w-6xl mx-auto text-center mb-16"
+      >
+        <h2 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-pink-500 to-purple-600 text-transparent bg-clip-text">
+          Get In Touch
+        </h2>
+        <p className="text-lg opacity-80 max-w-2xl mx-auto">
+          Feel free to reach out for collaborations, freelancing, or just a
+          friendly chat. I’m always open to new opportunities!
+        </p>
+      </motion.div>
+
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+        {/* LEFT SIDE */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="space-y-6"
+        >
+          <h3 className="text-3xl font-semibold mb-4">Contact Details</h3>
+
+          <p className="text-lg opacity-90 leading-relaxed">
+            Have a project or just want to say hello?  
+            I’d love to hear from you. Let’s build something great together!
           </p>
 
-          <div className="space-y-4">
-            <p className="flex items-center gap-2 text-lg">
-              <FiPhone className="text-pink-500" />
+          <div className="space-y-5 mt-6">
+            <div className="flex items-center gap-3 text-lg">
+              <FiPhone className="text-pink-400 text-2xl" />
               <a
                 href="tel:+917991845638"
-                className="hover:underline font-semibold"
+                className="hover:text-pink-400 transition-all"
               >
                 +91 79918 45638
               </a>
-            </p>
+            </div>
 
-            <p className="flex items-center gap-2 text-lg">
-              <FiMail className="text-purple-500" />
+            <div className="flex items-center gap-3 text-lg">
+              <FiMail className="text-purple-400 text-2xl" />
               <a
-                href="mailto:anurag@example.com"
-                className="hover:underline font-semibold"
+                href="mailto:anurag.application799@gmail.com"
+                className="hover:text-purple-400 transition-all"
               >
-                anurag@example.com
+                anurag.application799@gmail.com
               </a>
-            </p>
+            </div>
+            <div className="flex items-center gap-3 text-lg">
+              <FiMail className="text-purple-400 text-2xl" />
+              <a
+                href="mailto:anuhackerag799@gmail.com"
+                className="hover:text-purple-400 transition-all"
+              >
+                anuhackerag799@gmail.com
+              </a>
+            </div>
           </div>
-        </div>
 
-        {/* Right Side */}
-        <div
-          data-aos="fade-up"
-          className={`rounded-2xl shadow-xl p-8 tablet:p-10 ${
+          <p className="mt-6 text-sm opacity-60">I usually reply within 24 hours.</p>
+        </motion.div>
+
+        {/* RIGHT SIDE FORM */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className={`rounded-2xl shadow-2xl p-8 tablet:p-10 border transition-all duration-300 ${
             dark
-              ? "bg-black/40 backdrop-blur-sm border border-white/10"
-              : "bg-white/90 backdrop-blur-md border border-gray-200"
+              ? "bg-white/10 backdrop-blur-xl border-white/10"
+              : "bg-white/90 backdrop-blur-lg border-gray-200"
           }`}
         >
-          <form ref={form} onSubmit={sendEmail} className="space-y-5">
-            {/* Name */}
-            <div>
-              <label
-                htmlFor="name"
-                className={`block mb-1 text-sm font-medium ${
-                  dark ? "text-white" : "text-gray-900"
-                }`}
-              >
-                Name
-              </label>
+          <form ref={form} onSubmit={sendEmail} className="space-y-6">
+            {/* NAME */}
+            <div className="flex flex-col">
+              <label className="text-sm mb-1 font-medium">Name</label>
               <input
-                id="name"
                 name="from_name"
                 type="text"
                 required
-                placeholder="Your Name"
-                className={`w-full rounded-md p-3 border focus:ring-2 focus:outline-none ${
+                placeholder="Enter your name"
+                className={`p-3 rounded-md border transition-all focus:ring-2 focus:outline-none ${
                   dark
-                    ? "bg-gray-900 text-white border-gray-700 focus:ring-purple-500"
+                    ? "bg-[#0f172a] text-white border-gray-700 focus:ring-purple-500"
                     : "bg-white text-gray-900 border-gray-300 focus:ring-pink-400"
                 }`}
               />
             </div>
 
-            {/* Email */}
-            <div>
-              <label
-                htmlFor="email"
-                className={`block mb-1 text-sm font-medium ${
-                  dark ? "text-white" : "text-gray-900"
-                }`}
-              >
-                Email
-              </label>
+            {/* EMAIL */}
+            <div className="flex flex-col">
+              <label className="text-sm mb-1 font-medium">Email</label>
               <input
-                id="email"
                 name="from_email"
                 type="email"
                 required
                 placeholder="you@example.com"
-                className={`w-full rounded-md p-3 border focus:ring-2 focus:outline-none ${
+                className={`p-3 rounded-md border transition-all focus:ring-2 focus:outline-none ${
                   dark
-                    ? "bg-gray-900 text-white border-gray-700 focus:ring-purple-500"
+                    ? "bg-[#0f172a] text-white border-gray-700 focus:ring-purple-500"
                     : "bg-white text-gray-900 border-gray-300 focus:ring-purple-400"
                 }`}
               />
             </div>
 
-            {/* Phone */}
-            <div>
-              <label
-                htmlFor="phone"
-                className={`block mb-1 text-sm font-medium ${
-                  dark ? "text-white" : "text-gray-900"
-                }`}
-              >
-                Phone
-              </label>
+            {/* PHONE */}
+            <div className="flex flex-col">
+              <label className="text-sm mb-1 font-medium">Phone</label>
               <input
-                id="phone"
                 name="from_phone"
                 type="tel"
                 required
-                placeholder="Phone Number"
-                className={`w-full rounded-md p-3 border focus:ring-2 focus:outline-none ${
+                placeholder="Enter your phone number"
+                className={`p-3 rounded-md border transition-all focus:ring-2 focus:outline-none ${
                   dark
-                    ? "bg-gray-900 text-white border-gray-700 focus:ring-purple-500"
+                    ? "bg-[#0f172a] text-white border-gray-700 focus:ring-purple-500"
                     : "bg-white text-gray-900 border-gray-300 focus:ring-pink-300"
                 }`}
               />
             </div>
 
-            {/* Message */}
-            <div>
-              <label
-                htmlFor="message"
-                className={`block mb-1 text-sm font-medium ${
-                  dark ? "text-white" : "text-gray-900"
-                }`}
-              >
-                Message
-              </label>
+            {/* MESSAGE */}
+            <div className="flex flex-col">
+              <label className="text-sm mb-1 font-medium">Message</label>
               <textarea
-                id="message"
                 name="message"
                 rows="5"
                 required
-                placeholder="Your message..."
-                className={`w-full rounded-md p-3 border focus:ring-2 focus:outline-none ${
+                placeholder="Write your message..."
+                className={`p-3 rounded-md border transition-all focus:ring-2 focus:outline-none ${
                   dark
-                    ? "bg-gray-900 text-white border-gray-700 focus:ring-purple-500"
+                    ? "bg-[#0f172a] text-white border-gray-700 focus:ring-purple-500"
                     : "bg-white text-gray-900 border-gray-300 focus:ring-purple-300"
                 }`}
-              ></textarea>
+              />
             </div>
 
-            {/* Submit Button */}
+            {/* SUBMIT BUTTON */}
             <button
               type="submit"
-              className={`flex items-center justify-center gap-2 px-6 py-3 rounded-lg w-full text-lg font-semibold transition-all duration-300 ${
-                dark
-                  ? buttonText.includes("Sent")
-                    ? "bg-green-600"
-                    : "bg-purple-700 hover:bg-purple-800"
-                  : "bg-pink-500 text-white hover:bg-pink-600"
+              className={`flex items-center justify-center gap-2 py-3 px-2 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg ${
+                buttonText.includes("Sent")
+                  ? "bg-green-600 text-white"
+                  : dark
+                  ? "bg-purple-700 hover:bg-purple-800 text-white"
+                  : "bg-pink-500 hover:bg-pink-600 text-white"
               }`}
             >
-              <FiSend />
+              <FiSend className="text-xl" />
               {buttonText}
             </button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ import { FiDownload } from "react-icons/fi";
 
 function Resume({ dark }) {
   const handleDownloadAndOpen = () => {
-    const pdfUrl = "/AnuragPandeyCV.pdf";
+    const pdfUrl = "/my_portfolio/AnuragPandeyCV.pdf";
 
     // Open in new tab
     window.open(pdfUrl, "_blank");

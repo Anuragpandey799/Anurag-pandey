@@ -39,7 +39,7 @@ function Navbar({ dark, setDark }) {
             {/* Logo */}
             <div className="flex items-center">
               <img
-                src="/Images/logo5.png"
+                src="Images/logo5.png"
                 alt="Logo"
                 className="h-28 w-auto rounded"
               />

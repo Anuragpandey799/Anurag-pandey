@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FiArrowRight, FiHeart, FiThumbsDown, FiX } from "react-icons/fi";
+import { FiArrowRight, FiX } from "react-icons/fi";
 
 function Blog({ dark }) {
   useEffect(() => {
@@ -10,160 +9,141 @@ function Blog({ dark }) {
   }, []);
 
   const [activePost, setActivePost] = useState(null);
-  const [likes, setLikes] = useState({});
-  const [comments, setComments] = useState({});
-  const [commentInput, setCommentInput] = useState("");
 
   const blogPosts = [
     {
       id: 1,
-      title: "How I Built My Developer Portfolio from Scratch",
+      title: "Building a Full-Stack MERN Application from Scratch",
       summary:
-        "A complete walkthrough of how I designed, structured, and built this portfolio using React, Tailwind, and modern web animation libraries.",
-      content: `This article details my journey...`,
-      date: "July 2025",
-      slug: "/blog/portfolio-case-study",
-      image: "/Images/blog-portfolio.png",
+        "Step-by-step guide to creating a full-stack MERN (MongoDB, Express.js, React, Node.js) application with user authentication and REST APIs.",
+      content: `In this post, I will guide you through building a complete MERN stack web application. We'll start by setting up a Node.js server with Express, connect MongoDB for database storage, and then build a responsive React frontend. Authentication will be handled using JWT tokens and secure password hashing. We'll also explore structuring the project for scalability and deploying it to a cloud platform like Heroku or Vercel. By the end, you'll have a solid foundation for building production-ready MERN applications.`,
+      date: "December 2025",
     },
     {
       id: 2,
-      title: "Understanding Dark Mode in React",
+      title: "Mastering React Hooks for Modern Web Development",
       summary:
-        "A beginner-friendly guide to implementing smooth dark/light theme toggling using TailwindCSS and React state management.",
-      content: `Here's how you implement dark mode...`,
-      date: "June 2025",
-      slug: "/blog/dark-mode-react",
-      image: "/Images/blog-darkmode.png",
+        "Understanding and leveraging React Hooks to write cleaner, functional components and manage state effectively.",
+      content: `React Hooks revolutionized the way developers handle state and lifecycle in functional components. In this article, we cover essential hooks like useState, useEffect, useContext, and custom hooks. We'll explore practical examples like fetching data from APIs, handling forms, and managing global state using Context API. Hooks allow you to write more readable and maintainable code, reducing the need for class components.`,
+      date: "November 2025",
     },
     {
       id: 3,
-      title: "Top UI Libraries for React Developers",
+      title: "Creating RESTful APIs with Node.js and Express",
       summary:
-        "Explore the top libraries to speed up your UI/UX workflow including Shadcn UI, Framer Motion, Radix UI and more.",
-      content: `There are many UI libraries that...`,
-      date: "May 2025",
-      slug: "/blog/top-ui-libraries",
-      image: "/Images/blog-ui.png",
+        "Learn how to design and implement RESTful APIs using Node.js and Express, including routing, middleware, and error handling.",
+      content: `REST APIs are the backbone of modern web applications. This post covers building RESTful APIs from scratch using Node.js and Express. We'll discuss proper routing, middleware usage for logging and authentication, handling HTTP requests/responses, and managing errors gracefully. Examples include building CRUD endpoints for a user management system. Additionally, we’ll touch on connecting the API to a MongoDB database using Mongoose.`,
+      date: "October 2025",
+    },
+    {
+      id: 4,
+      title: "Deploying MERN Applications to the Cloud",
+      summary:
+        "A practical guide to deploying full-stack applications built with MERN on platforms like Vercel, Netlify, and Heroku.",
+      content: `After building a MERN application, deployment is the next critical step. This article explains deploying the frontend and backend to cloud platforms. We'll cover environment variables, CORS handling, connecting to cloud-hosted MongoDB, and best practices for production. You will learn how to deploy the React frontend on Vercel or Netlify and Node/Express backend on Heroku, ensuring your app is live and accessible.`,
+      date: "September 2025",
+    },
+    {
+      id: 5,
+      title: "Optimizing Performance in React Applications",
+      summary:
+        "Tips and techniques for improving React app performance, including memoization, lazy loading, and code splitting.",
+      content: `Performance is crucial for user experience. In this post, we'll cover techniques to optimize React apps: using React.memo for preventing unnecessary re-renders, lazy loading components with React.lazy and Suspense, code splitting to reduce bundle size, and optimizing state management. Additionally, we’ll discuss analyzing performance using React DevTools and Chrome DevTools to identify bottlenecks.`,
+      date: "August 2025",
     },
   ];
 
-  const handleLike = (id) => {
-    setLikes((prev) => ({ ...prev, [id]: (prev[id] || 0) + 1 }));
-  };
-
-  const handleComment = (id) => {
-    if (commentInput.trim()) {
-      setComments((prev) => ({
-        ...prev,
-        [id]: [...(prev[id] || []), commentInput.trim()],
-      }));
-      setCommentInput("");
-    }
-  };
-
   return (
     <section
-      className={`min-h-screen px-6 py-16 transition-all ${
+      className={`min-h-screen px-6 py-20 ${
         dark
-          ? "bg-gradient-to-br from-blue-950 via-slate-900 to-black text-white"
-          : "bg-gradient-to-br from-gray-100 via-white to-gray-300 text-gray-900"
+          ? "bg-gradient-to-b from-black via-slate-900 to-black text-white"
+          : "bg-gradient-to-b from-gray-50 via-white to-gray-200 text-gray-900"
       }`}
     >
-      <div className="max-w-6xl mx-auto">
-        <h2 className={`text-center text-4xl font-bold mb-12 bg-clip-text text-transparent ${
-          dark
-            ? "bg-gradient-to-r from-teal-300 via-pink-400 to-yellow-300"
-            : "bg-gradient-to-r from-pink-500 to-purple-700"
-        }`}>
-          📚 Developer Blog
-        </h2>
+      <div className="max-w-7xl mx-auto">
+        {/* HEADER */}
+        <h1
+          className={`text-center text-5xl font-extrabold mb-14 tracking-tight ${
+            dark
+              ? "bg-gradient-to-r from-teal-300 via-indigo-400 to-pink-300 text-transparent bg-clip-text"
+              : "bg-gradient-to-r from-purple-600 to-pink-500 text-transparent bg-clip-text"
+          }`}
+        >
+          DevLog – Insights & Stories
+        </h1>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* BLOG CARDS */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
           {blogPosts.map((post) => (
             <div
               key={post.id}
-              className={`rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-transform hover:scale-105 ${
-                dark ? "bg-slate-900 text-white" : "bg-white text-gray-900"
+              className={`break-inside-avoid p-5 rounded-xl shadow-xl cursor-pointer transition-all hover:-translate-y-2 hover:shadow-2xl backdrop-blur-xl border ${
+                dark
+                  ? "bg-white/5 border-white/10 hover:border-teal-400/50"
+                  : "bg-white/60 border-gray-200 hover:border-purple-400/40"
               }`}
+              onClick={() => setActivePost(post)}
               data-aos="fade-up"
             >
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-5 flex flex-col justify-between h-auto">
-                <div>
-                  <p className={`text-sm mb-1 ${dark ? "text-gray-400" : "text-gray-600"}`}>{post.date}</p>
-                  <h3 className={`text-xl font-bold mb-2 ${dark ? "text-pink-400" : "text-purple-700"}`}>
-                    {post.title}
-                  </h3>
-                  <p className={`text-sm text-justify ${dark ? "text-gray-300" : "text-gray-800"}`}>{post.summary}</p>
-                </div>
-                <div className="mt-4">
-                  <button
-                    onClick={() => setActivePost(post)}
-                    className={`inline-flex items-center gap-2 text-sm font-semibold transition-all ${
-                      dark
-                        ? "text-teal-400 hover:text-yellow-400"
-                        : "text-purple-600 hover:text-purple-800"
-                    }`}
-                  >
-                    Read More <FiArrowRight />
-                  </button>
-                </div>
+              <p
+                className={`text-xs mb-1 ${
+                  dark ? "text-gray-400" : "text-gray-600"
+                }`}
+              >
+                {post.date}
+              </p>
+
+              <h3
+                className={`font-bold text-xl mb-2 ${
+                  dark ? "text-teal-300" : "text-purple-700"
+                }`}
+              >
+                {post.title}
+              </h3>
+
+              {/* TRUNCATED SUMMARY */}
+              <p
+                className={`text-sm ${dark ? "text-gray-300" : "text-gray-800"} line-clamp-2`}
+              >
+                {post.summary}
+              </p>
+
+              <div className="mt-4 flex items-center gap-2 text-sm font-medium text-indigo-400">
+                Read More <FiArrowRight />
               </div>
             </div>
           ))}
         </div>
 
-        {/* Modal */}
+        {/* MODAL */}
         {activePost && (
-          <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center px-4">
-            <div className={`max-w-2xl w-full rounded-xl p-6 overflow-y-auto max-h-[90vh] relative ${
-              dark ? "bg-slate-900 text-white" : "bg-white text-gray-900"
-            }`}>
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-[100] flex items-center justify-center p-4">
+            <div
+              className={`max-w-3xl w-full p-8 rounded-2xl relative overflow-y-auto max-h-[90vh] border shadow-2xl ${
+                dark
+                  ? "bg-slate-900 border-white/10"
+                  : "bg-white border-gray-300"
+              }`}
+            >
+              {/* CLOSE BUTTON */}
               <button
                 onClick={() => setActivePost(null)}
-                className="absolute top-3 right-3 text-xl"
+                className="absolute top-5 right-5 text-2xl p-2 rounded-full hover:bg-white/10 transition"
               >
                 <FiX />
               </button>
-              <img src={activePost.image} alt={activePost.title} className="w-full h-48 object-cover rounded" />
-              <h3 className="text-2xl font-bold mt-4 mb-2">{activePost.title}</h3>
-              <p className="text-sm mb-4">{activePost.date}</p>
-              <p className="text-base leading-relaxed mb-4">{activePost.content}</p>
-              <div className="flex items-center gap-4 mb-4">
-                <button
-                  className="flex items-center gap-1 text-green-500"
-                  onClick={() => handleLike(activePost.id)}
-                >
-                  <FiHeart /> Like ({likes[activePost.id] || 0})
-                </button>
-                <button className="flex items-center gap-1 text-red-400">
-                  <FiThumbsDown /> Dislike
-                </button>
-              </div>
-              <div>
-                <textarea
-                  rows="2"
-                  value={commentInput}
-                  onChange={(e) => setCommentInput(e.target.value)}
-                  placeholder="Leave a comment..."
-                  className="w-full p-2 border rounded mb-2 text-black"
-                />
-                <button
-                  className="bg-blue-600 text-white px-4 py-1 rounded"
-                  onClick={() => handleComment(activePost.id)}
-                >
-                  Comment
-                </button>
-                <ul className="mt-3 space-y-2">
-                  {(comments[activePost.id] || []).map((c, idx) => (
-                    <li key={idx} className="border-b pb-1 text-sm">{c}</li>
-                  ))}
-                </ul>
-              </div>
+
+              {/* TITLE */}
+              <h2 className="text-3xl font-bold mb-2">{activePost.title}</h2>
+
+              {/* DATE */}
+              <p className="text-sm opacity-70 mb-5">{activePost.date}</p>
+
+              {/* FULL CONTENT */}
+              <p className="leading-relaxed text-[1.05rem] whitespace-pre-line">
+                {activePost.content}
+              </p>
             </div>
           </div>
         )}

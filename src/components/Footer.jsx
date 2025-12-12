@@ -27,12 +27,12 @@ function Footer({ dark }) {
         }`}>
       <div className="text-center font-montserrat">
         {/* Logo or Name */}
-        <h1 className={`text-2xl font-bold ${text}`}>Anurag</h1>
+        <h1 className={`text-2xl font-bold ${text}`}>Anurag Pandey</h1>
 
         {/* Top Nav Links */}
         <div className={`flex flex-wrap justify-center gap-6 text-sm mt-2 ${text}`}>
           <Link to="/">Home</Link>
-          <Link to="/projects">Projects</Link>
+          <Link to="/project">Projects</Link>
           <Link to="/blog">Blog</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
