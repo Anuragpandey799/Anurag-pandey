@@ -5,111 +5,296 @@ import { FiArrowRight, FiX } from "react-icons/fi";
 
 function Blog({ dark }) {
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ duration: 700, once: true });
   }, []);
 
   const [activePost, setActivePost] = useState(null);
+  const [filter, setFilter] = useState("all");
+
+  /* ===================== BLOG DATA ===================== */
 
   const blogPosts = [
+    /* ===================== JOURNEY BLOGS ===================== */
+
     {
       id: 1,
-      title: "Building a Full-Stack MERN Application from Scratch",
+      category: "journey",
+      year: "2022",
+      title: "BCA First Year – Laying the Foundation",
       summary:
-        "Step-by-step guide to creating a full-stack MERN (MongoDB, Express.js, React, Node.js) application with user authentication and REST APIs.",
-      content: `In this post, I will guide you through building a complete MERN stack web application. We'll start by setting up a Node.js server with Express, connect MongoDB for database storage, and then build a responsive React frontend. Authentication will be handled using JWT tokens and secure password hashing. We'll also explore structuring the project for scalability and deploying it to a cloud platform like Heroku or Vercel. By the end, you'll have a solid foundation for building production-ready MERN applications.`,
-      date: "December 2025",
+        "My journey into computer applications started with curiosity, confusion, and learning how to think logically.",
+      readTime: "6 min read",
+      tags: ["BCA", "C Programming", "Foundations"],
+      content: `
+📍 Background
+I began my BCA journey in 2022 at Tilak Maharashtra Vidyapeeth, Pune. I had curiosity about technology but no clear roadmap.
+
+📚 Subjects Studied
+- Programming in C
+- Computer Fundamentals
+- DBMS (Basics)
+- Mathematics
+- Digital Electronics
+
+⚠️ Challenges
+- Debugging errors
+- Writing logic independently
+- Understanding programming concepts
+
+✅ Outcome
+This year built my logical thinking and discipline toward learning programming.
+      `,
     },
+
     {
       id: 2,
-      title: "Mastering React Hooks for Modern Web Development",
+      category: "journey",
+      year: "2023",
+      title: "Second Year – Discovering Web Development",
       summary:
-        "Understanding and leveraging React Hooks to write cleaner, functional components and manage state effectively.",
-      content: `React Hooks revolutionized the way developers handle state and lifecycle in functional components. In this article, we cover essential hooks like useState, useEffect, useContext, and custom hooks. We'll explore practical examples like fetching data from APIs, handling forms, and managing global state using Context API. Hooks allow you to write more readable and maintainable code, reducing the need for class components.`,
-      date: "November 2025",
+        "A challenging yet exciting year where I discovered my interest in web development.",
+      readTime: "7 min read",
+      tags: ["DSA", "Java", "Web"],
+      content: `
+📚 Subjects
+- Data Structures & Algorithms
+- Java (OOP)
+- DBMS & SQL
+- Operating Systems
+- Computer Networks
+- Python Programming
+
+🚀 Turning Point
+While learning Java and DSA, I explored HTML, CSS, and JavaScript and found joy in building visual applications.
+
+⚠️ Difficulties
+- DSA problem-solving
+- Backend concepts
+
+📈 Growth
+This year strengthened my confidence and problem-solving abilities.
+      `,
     },
+
     {
       id: 3,
-      title: "Creating RESTful APIs with Node.js and Express",
+      category: "journey",
+      year: "2024–2025",
+      title: "Final Year – Becoming a MERN Stack Developer",
       summary:
-        "Learn how to design and implement RESTful APIs using Node.js and Express, including routing, middleware, and error handling.",
-      content: `REST APIs are the backbone of modern web applications. This post covers building RESTful APIs from scratch using Node.js and Express. We'll discuss proper routing, middleware usage for logging and authentication, handling HTTP requests/responses, and managing errors gracefully. Examples include building CRUD endpoints for a user management system. Additionally, we’ll touch on connecting the API to a MongoDB database using Mongoose.`,
-      date: "October 2025",
+        "The year I transitioned from student to full-stack MERN developer through real projects.",
+      readTime: "9 min read",
+      tags: ["MERN", "React", "Node"],
+      content: `
+🛠 Technologies Learned
+- React.js, Context API
+- Node.js & Express.js
+- MongoDB & Mongoose
+- REST APIs, JWT Authentication
+- MVC Architecture
+
+💻 Projects
+- MediTech (Ongoing MERN Healthcare Platform)
+- eNotebook (Secure CRUD Notes App)
+- MedLink (Final Year Project – Best Project Award 2025 🏆)
+
+⚠️ Challenges
+- Authentication bugs
+- API security
+- Deployment issues
+
+✅ Outcome
+By the end of final year, I could independently build full-stack applications.
+      `,
     },
+
     {
       id: 4,
-      title: "Deploying MERN Applications to the Cloud",
+      category: "journey",
+      year: "Reflection",
+      title: "What My BCA Journey Taught Me",
       summary:
-        "A practical guide to deploying full-stack applications built with MERN on platforms like Vercel, Netlify, and Heroku.",
-      content: `After building a MERN application, deployment is the next critical step. This article explains deploying the frontend and backend to cloud platforms. We'll cover environment variables, CORS handling, connecting to cloud-hosted MongoDB, and best practices for production. You will learn how to deploy the React frontend on Vercel or Netlify and Node/Express backend on Heroku, ensuring your app is live and accessible.`,
-      date: "September 2025",
+        "A reflection on my growth, mistakes, lessons, and future goals.",
+      readTime: "5 min read",
+      tags: ["Reflection", "Growth"],
+      content: `
+🎯 Lessons Learned
+- Consistency beats motivation
+- Debugging builds patience
+- Projects teach more than theory
+
+🏆 Achievements
+- Best Project Award (2025)
+- Top 10 finalist in coding competition
+
+🚀 Future Goals
+- Build scalable systems
+- Learn cloud & system design
+- Grow as a professional developer
+      `,
     },
+
+    /* ===================== TECHNICAL BLOGS (UPDATED) ===================== */
+
     {
       id: 5,
+      category: "tech",
+      title: "Building a Full-Stack MERN Application from Scratch",
+      summary:
+        "A practical guide to building a secure and scalable MERN application.",
+      readTime: "6 min read",
+      tags: ["MERN", "JWT", "APIs"],
+      content: `
+This blog explains how I build MERN applications using React, Node.js, Express, and MongoDB.
+
+🔹 Key Topics
+- Project structure
+- REST API design
+- JWT authentication
+- MVC architecture
+- Deployment on Vercel & Render
+
+🔹 Real Learning
+This approach is based on my real project experience, not tutorials.
+      `,
+    },
+
+    {
+      id: 6,
+      category: "tech",
+      title: "Mastering React Hooks for Modern Development",
+      summary:
+        "How React Hooks helped me write cleaner and scalable components.",
+      readTime: "5 min read",
+      tags: ["React", "Hooks"],
+      content: `
+I explain how I use useState, useEffect, useContext, and custom hooks in real projects.
+
+🔹 Use Cases
+- API calls
+- Global state management
+- Performance optimization
+      `,
+    },
+
+    {
+      id: 7,
+      category: "tech",
+      title: "Creating RESTful APIs with Node.js & Express",
+      summary:
+        "Designing scalable APIs with authentication and error handling.",
+      readTime: "5 min read",
+      tags: ["Node", "Express", "API"],
+      content: `
+This blog explains how I design REST APIs using Express.
+
+🔹 Covered Topics
+- Routing
+- Middleware
+- JWT protection
+- Error handling
+      `,
+    },
+
+    {
+      id: 8,
+      category: "tech",
+      title: "Deploying MERN Applications to the Cloud",
+      summary:
+        "How I deploy real-world MERN applications.",
+      readTime: "4 min read",
+      tags: ["Deployment", "Vercel"],
+      content: `
+I explain frontend deployment on Vercel and backend on Render with environment variables.
+      `,
+    },
+
+    {
+      id: 9,
+      category: "tech",
       title: "Optimizing Performance in React Applications",
       summary:
-        "Tips and techniques for improving React app performance, including memoization, lazy loading, and code splitting.",
-      content: `Performance is crucial for user experience. In this post, we'll cover techniques to optimize React apps: using React.memo for preventing unnecessary re-renders, lazy loading components with React.lazy and Suspense, code splitting to reduce bundle size, and optimizing state management. Additionally, we’ll discuss analyzing performance using React DevTools and Chrome DevTools to identify bottlenecks.`,
-      date: "August 2025",
+        "Techniques I use to improve performance in production apps.",
+      readTime: "4 min read",
+      tags: ["Performance", "React"],
+      content: `
+Topics include memoization, lazy loading, code splitting, and performance debugging.
+      `,
     },
   ];
+
+  const filteredPosts =
+    filter === "all"
+      ? blogPosts
+      : blogPosts.filter((post) => post.category === filter);
+
+  /* ===================== UI ===================== */
 
   return (
     <section
       className={`min-h-screen px-6 py-20 ${
         dark
           ? "bg-gradient-to-b from-black via-slate-900 to-black text-white"
-          : "bg-gradient-to-b from-gray-50 via-white to-gray-200 text-gray-900"
+          : "bg-gradient-to-b from-gray-50 via-white to-gray-200"
       }`}
     >
       <div className="max-w-7xl mx-auto">
-        {/* HEADER */}
-        <h1
-          className={`text-center text-5xl font-extrabold mb-14 tracking-tight ${
-            dark
-              ? "bg-gradient-to-r from-teal-300 via-indigo-400 to-pink-300 text-transparent bg-clip-text"
-              : "bg-gradient-to-r from-purple-600 to-pink-500 text-transparent bg-clip-text"
-          }`}
-        >
-          DevLog – Insights & Stories
+        <h1 className="text-center text-5xl font-extrabold mb-4">
+          My Developer Journey & Blogs 🚀
         </h1>
+        <p className="text-center opacity-70 mb-12">
+          Learning, building, failing, and growing as a developer
+        </p>
 
-        {/* BLOG CARDS */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
-          {blogPosts.map((post) => (
+        {/* FILTERS */}
+        <div className="flex justify-center gap-4 mb-14">
+          {["all", "journey", "tech"].map((btn) => (
+            <button
+              key={btn}
+              onClick={() => setFilter(btn)}
+              className={`px-5 py-2 rounded-full font-medium ${
+                filter === btn
+                  ? "bg-indigo-500 text-white"
+                  : "bg-white/10 hover:bg-white/20"
+              }`}
+            >
+              {btn.toUpperCase()}
+            </button>
+          ))}
+        </div>
+
+        {/* BLOG LIST */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredPosts.map((post) => (
             <div
               key={post.id}
-              className={`break-inside-avoid p-5 rounded-xl shadow-xl cursor-pointer transition-all hover:-translate-y-2 hover:shadow-2xl backdrop-blur-xl border ${
-                dark
-                  ? "bg-white/5 border-white/10 hover:border-teal-400/50"
-                  : "bg-white/60 border-gray-200 hover:border-purple-400/40"
-              }`}
-              onClick={() => setActivePost(post)}
               data-aos="fade-up"
+              onClick={() => setActivePost(post)}
+              className={`cursor-pointer p-6 rounded-xl border shadow-lg transition hover:-translate-y-2 ${
+                dark
+                  ? "bg-white/5 border-white/10"
+                  : "bg-white border-gray-200"
+              }`}
             >
-              <p
-                className={`text-xs mb-1 ${
-                  dark ? "text-gray-400" : "text-gray-600"
-                }`}
-              >
-                {post.date}
-              </p>
+              <div className="text-sm opacity-60 mb-1">
+                {post.year || "Blog"} • {post.readTime}
+              </div>
 
-              <h3
-                className={`font-bold text-xl mb-2 ${
-                  dark ? "text-teal-300" : "text-purple-700"
-                }`}
-              >
-                {post.title}
-              </h3>
+              <h3 className="text-xl font-bold mb-2">{post.title}</h3>
+              <p className="opacity-80 mb-4">{post.summary}</p>
 
-              {/* TRUNCATED SUMMARY */}
-              <p
-                className={`text-sm ${dark ? "text-gray-300" : "text-gray-800"} line-clamp-2`}
-              >
-                {post.summary}
-              </p>
+              <div className="flex flex-wrap gap-2">
+                {post.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="text-xs px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400"
+                  >
+                    #{tag}
+                  </span>
+                ))}
+              </div>
 
-              <div className="mt-4 flex items-center gap-2 text-sm font-medium text-indigo-400">
+              <div className="mt-4 flex items-center gap-2 text-indigo-400 text-sm">
                 Read More <FiArrowRight />
               </div>
             </div>
@@ -118,30 +303,21 @@ function Blog({ dark }) {
 
         {/* MODAL */}
         {activePost && (
-          <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-[100] flex items-center justify-center p-4">
-            <div
-              className={`max-w-3xl w-full p-8 rounded-2xl relative overflow-y-auto max-h-[90vh] border shadow-2xl ${
-                dark
-                  ? "bg-slate-900 border-white/10"
-                  : "bg-white border-gray-300"
-              }`}
-            >
-              {/* CLOSE BUTTON */}
+          <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
+            <div className="bg-slate-900 max-w-3xl w-full p-8 rounded-2xl relative overflow-y-auto max-h-[90vh]">
               <button
                 onClick={() => setActivePost(null)}
-                className="absolute top-5 right-5 text-2xl p-2 rounded-full hover:bg-white/10 transition"
+                className="absolute top-5 right-5 text-2xl"
               >
                 <FiX />
               </button>
 
-              {/* TITLE */}
               <h2 className="text-3xl font-bold mb-2">{activePost.title}</h2>
+              <p className="text-sm opacity-70 mb-6">
+                {activePost.year || "Blog"} • {activePost.readTime}
+              </p>
 
-              {/* DATE */}
-              <p className="text-sm opacity-70 mb-5">{activePost.date}</p>
-
-              {/* FULL CONTENT */}
-              <p className="leading-relaxed text-[1.05rem] whitespace-pre-line">
+              <p className="whitespace-pre-line leading-relaxed">
                 {activePost.content}
               </p>
             </div>
