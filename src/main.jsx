@@ -12,6 +12,7 @@ import About from "./components/pages/About.jsx"; // Corrected import
 import GreatIndianScientist from "./components/projects/GreatIndianScientist.jsx";
 import Resume from "./components/pages/Resume.jsx";
 import Blog from "./components/pages/Blog.jsx";
+import Services from "./components/pages/Services.jsx";
 
 const Main = () => {
   const [dark, setDark] = useState(true);
@@ -24,6 +25,7 @@ const Main = () => {
         <Route path="/" element={<App dark={dark} setDark={setDark} />}>
           <Route index element={<Home dark={dark} />} />
           <Route path="home" element={<Home dark={dark} />} />
+          <Route path="services" element={<Services dark={dark} />} />
           <Route path="contact" element={<Contact dark={dark} />} />
           <Route path="about" element={<About dark={dark} />} />
           <Route path="project" element={<Project dark={dark} />} />

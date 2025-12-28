@@ -13,6 +13,7 @@ function Navbar({ dark, setDark }) {
 
   const navLinks = [
     { name: "Home", path: "/home", title: "Anurag Pandey's portfolio - Home" },
+    { name: "Services", path: "/services", title: "Services by Anurag pandey" },
     { name: "About", path: "/about", title: "Anurag Pandey's portfolio - About" },
     {
       name: "Projects",
