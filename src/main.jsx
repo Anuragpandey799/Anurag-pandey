@@ -1,6 +1,7 @@
 import { StrictMode, useState } from "react";
 import { React } from "react";
 import { createRoot } from "react-dom/client";
+import { HelmetProvider } from "react-helmet-async";
 
 import "./index.css";
 import App from "./App.jsx";
@@ -43,6 +44,8 @@ const Main = () => {
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Main />
-  </StrictMode>
+    <HelmetProvider>
+      <Main />
+    </HelmetProvider>
+  </StrictMode>,
 );

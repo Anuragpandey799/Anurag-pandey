@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import {
   FiCode,
   FiLayout,
@@ -19,36 +19,41 @@ function Services({ dark }) {
     AOS.init({ duration: 800, once: true });
   }, []);
 
+  const pageUrl =
+    typeof window !== "undefined"
+      ? window.location.href
+      : "https://your-domain.com/services";
+
   const services = [
     {
       icon: <FiCode />,
       title: "Full Stack MERN Development",
-      desc: "Complete end-to-end web applications using React, Node.js, Express, and MongoDB with secure authentication and scalable architecture.",
+      desc: "End-to-end MERN applications using React, Node.js, Express, and MongoDB with secure authentication and scalable architecture.",
     },
     {
       icon: <FiLayout />,
       title: "Frontend Development (React)",
-      desc: "Modern, responsive, and high-performance UIs built with React.js, Tailwind CSS, and optimized component architecture.",
+      desc: "Modern, responsive, and high-performance user interfaces built with React.js and Tailwind CSS.",
     },
     {
       icon: <FiGitBranch />,
       title: "Backend & API Development",
-      desc: "Secure RESTful APIs with Node.js & Express, JWT authentication, role-based access control, and clean MVC structure.",
+      desc: "Secure REST APIs with Node.js, Express, JWT authentication, and role-based access control.",
     },
     {
       icon: <FiDatabase />,
       title: "Database Design & Management",
-      desc: "Efficient MongoDB schema design, optimized CRUD operations using Mongoose, and basic MySQL integration.",
+      desc: "Optimized MongoDB schema design, Mongoose queries, and basic MySQL integration.",
     },
     {
       icon: <FiShield />,
       title: "Authentication & Security",
-      desc: "JWT-based authentication, encrypted passwords using Bcrypt, protected routes, and secure API access.",
+      desc: "JWT authentication, encrypted passwords, protected routes, and secure backend logic.",
     },
     {
       icon: <FiCloud />,
       title: "Deployment & Hosting",
-      desc: "Production-ready deployment on Vercel & Render with environment variables, optimization, and best practices.",
+      desc: "Production-ready deployment on Vercel and Render with environment variables and optimization.",
     },
   ];
 
@@ -57,19 +62,19 @@ function Services({ dark }) {
       name: "Academic Project Evaluation Panel",
       role: "Final Year Project Review",
       feedback:
-        "The project demonstrated strong full-stack development skills, secure authentication, and practical real-world implementation.",
+        "The project demonstrated strong full-stack skills, secure authentication, and real-world implementation.",
     },
     {
       name: "Peer Developer",
       role: "MERN Stack Collaborator",
       feedback:
-        "Anurag has a solid understanding of MERN stack concepts and always focuses on clean, scalable code.",
+        "Anurag has a solid understanding of MERN concepts and focuses on clean, scalable code.",
     },
     {
       name: "Self-Driven Projects",
       role: "Portfolio & Personal Projects",
       feedback:
-        "Each project shows continuous improvement in architecture, performance, and real-world problem solving.",
+        "Each project shows continuous improvement in architecture, performance, and problem solving.",
     },
   ];
 
@@ -77,20 +82,56 @@ function Services({ dark }) {
     <>
       {/* ================= SEO ================= */}
       <Helmet>
-        <title>Services | Anurag Pandey – MERN Stack Developer</title>
+        <title>
+          MERN Stack Development Services | Anurag Pandey - Full Stack Developer
+        </title>
+
         <meta
           name="description"
-          content="Professional MERN Stack development services including React frontend, Node.js APIs, MongoDB databases, authentication, deployment, and performance optimization."
+          content="Professional MERN Stack development services by Anurag Pandey. React frontend, Node.js APIs, MongoDB databases, authentication, deployment, and scalable web solutions."
         />
+
+        <link rel="canonical" href={pageUrl} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
         <meta
-          name="keywords"
-          content="MERN Stack Developer, React Developer, Node.js Developer, MongoDB, Full Stack Web Developer, Freelance Web Developer"
+          property="og:title"
+          content="MERN Stack Development Services - Anurag Pandey"
         />
-        <meta property="og:title" content="Services – Anurag Pandey" />
         <meta
           property="og:description"
           content="Helping startups, students, and businesses build secure, scalable, and modern web applications."
         />
+        <meta property="og:url" content={pageUrl} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="MERN Stack Development Services - Anurag Pandey"
+        />
+        <meta
+          name="twitter:description"
+          content="Full Stack MERN development services including React, Node.js, MongoDB, authentication, and deployment."
+        />
+
+        {/* Service Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "MERN Stack Web Development",
+            provider: {
+              "@type": "Person",
+              name: "Anurag Pandey",
+              jobTitle: "MERN Stack Developer",
+            },
+            areaServed: "Worldwide",
+            description:
+              "Full Stack MERN development services including React frontend, Node.js backend, MongoDB databases, authentication, and deployment.",
+          })}
+        </script>
       </Helmet>
 
       <section
@@ -101,29 +142,28 @@ function Services({ dark }) {
         }`}
       >
         <div className="max-w-7xl mx-auto">
-
           {/* ================= HERO ================= */}
-          <div className="text-center mb-24" data-aos="fade-up">
-            <h1 className="text-5xl font-extrabold mb-4">Services</h1>
+          <header className="text-center mb-24" data-aos="fade-up">
+            <h1 className="text-5xl font-extrabold mb-4">
+              MERN Stack Development Services
+            </h1>
             <p className="text-lg opacity-80 max-w-3xl mx-auto">
-              I help individuals, students, and startups turn ideas into
-              secure, scalable, and production-ready web applications using
-              modern full-stack technologies.
+              I help individuals, students, and startups turn ideas into secure,
+              scalable, and production-ready web applications using modern
+              full-stack technologies.
             </p>
             <NavLink
               to="/contact"
               className="inline-block px-10 py-3 mt-5 rounded-full bg-indigo-500 text-white font-semibold hover:bg-indigo-600 transition"
             >
-              Let’s Work Together
+              Let's Work Together
             </NavLink>
-          </div>
-
-          
+          </header>
 
           {/* ================= SERVICES ================= */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-28">
+          <section className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-28">
             {services.map((service, index) => (
-              <div
+              <article
                 key={index}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
@@ -136,48 +176,28 @@ function Services({ dark }) {
                 <div className="text-3xl mb-4 text-indigo-400">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                <h2 className="text-xl font-bold mb-3">{service.title}</h2>
                 <p className="opacity-80 text-sm leading-relaxed">
                   {service.desc}
                 </p>
-              </div>
+              </article>
             ))}
-          </div>
-
-          {/* ================= TRUST STATS ================= */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-28 text-center" data-aos="fade-up">
-            {[
-              { label: "Projects Built", value: "5+" },
-              { label: "REST APIs Developed", value: "20+" },
-              { label: "Best Project Award", value: "2025 🏆" },
-              { label: "Tech Stack", value: "MERN" },
-            ].map((stat, i) => (
-              <div
-                key={i}
-                className={`p-6 rounded-xl shadow ${
-                  dark ? "bg-white/5" : "bg-white"
-                }`}
-              >
-                <div className="text-3xl font-bold text-indigo-400 mb-2">
-                  {stat.value}
-                </div>
-                <p className="text-sm opacity-80">{stat.label}</p>
-              </div>
-            ))}
-          </div>
+          </section>
 
           {/* ================= TESTIMONIALS ================= */}
-          <div className="mb-28" data-aos="fade-up">
+          <section className="mb-28" data-aos="fade-up">
             <h2 className="text-3xl font-bold text-center mb-12">
               Trust & Feedback
             </h2>
 
             <div className="grid md:grid-cols-3 gap-8">
               {testimonials.map((item, i) => (
-                <div
+                <article
                   key={i}
                   className={`p-6 rounded-2xl border shadow ${
-                    dark ? "bg-white/5 border-white/10" : "bg-white border-gray-200"
+                    dark
+                      ? "bg-white/5 border-white/10"
+                      : "bg-white border-gray-200"
                   }`}
                 >
                   <FiStar className="text-indigo-400 mb-4" />
@@ -186,34 +206,13 @@ function Services({ dark }) {
                   </p>
                   <div className="font-semibold">{item.name}</div>
                   <div className="text-xs opacity-60">{item.role}</div>
-                </div>
+                </article>
               ))}
             </div>
-          </div>
-
-          {/* ================= WHY CHOOSE ME ================= */}
-          <div className="mb-28" data-aos="fade-up">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              Why Choose Me
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {[
-                "Clean, scalable, and secure code practices",
-                "Real-world project-based experience",
-                "Clear communication & transparency",
-                "Focus on performance & maintainability",
-              ].map((point, i) => (
-                <div key={i} className="flex gap-4 items-start">
-                  <FiCheckCircle className="text-indigo-400 mt-1" />
-                  <p className="opacity-80">{point}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          </section>
 
           {/* ================= CTA ================= */}
-          <div
+          <section
             className={`text-center p-14 rounded-2xl border shadow-2xl ${
               dark
                 ? "bg-white/5 border-white/10"
@@ -225,16 +224,16 @@ function Services({ dark }) {
               Ready to build something impactful?
             </h2>
             <p className="opacity-80 mb-8 max-w-xl mx-auto">
-              Whether it’s a project, portfolio, startup idea, or academic
-              application — let’s turn it into a real product.
+              Whether it's a project, portfolio, startup idea, or academic
+              application — let's turn it into a real product.
             </p>
             <NavLink
               to="/contact"
               className="inline-block px-10 py-3 rounded-full bg-indigo-500 text-white font-semibold hover:bg-indigo-600 transition"
             >
-              Let’s Work Together
+              Let's Work Together
             </NavLink>
-          </div>
+          </section>
         </div>
       </section>
     </>

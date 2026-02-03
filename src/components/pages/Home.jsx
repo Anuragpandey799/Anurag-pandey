@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import {
   FaReact,
   FaNodeJs,
   FaGitAlt,
-  FaGlobe,
   FaAward,
   FaProjectDiagram,
   FaHandshake,
@@ -41,20 +40,30 @@ function Home({ dark }) {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://my-portfolio-wheat-zeta-89.vercel.app/#anurag-pandey",
     name: "Anurag Pandey",
-    jobTitle: "Full Stack MERN Developer",
-    url: "https://my-portfolio-wheat-zeta-89.vercel.app/",
-    sameAs: [
-      "https://github.com/",
-      "https://linkedin.com/",
+    alternateName: [
+      "Anurag Pandey MERN Developer",
+      "Anurag Pandey Software Engineer",
+      "Anurag Pandey Freelance Developer",
     ],
+    jobTitle: "Full Stack MERN Developer",
+    description:
+      "Anurag Pandey is a Full Stack MERN Developer and Freelance Software Engineer specializing in React, Node.js, MongoDB, and Express.",
+    url: "https://my-portfolio-wheat-zeta-89.vercel.app/",
     knowsAbout: [
+      "MERN Stack",
       "React.js",
       "Node.js",
       "MongoDB",
       "Express.js",
       "REST APIs",
-      "Full Stack Development",
+      "Freelance Web Development",
+      "Software Engineering",
+    ],
+    sameAs: [
+      "https://github.com/Anuragpandey799",
+      "https://www.linkedin.com/",
     ],
   };
 
@@ -63,31 +72,49 @@ function Home({ dark }) {
       {/* ================= SEO ================= */}
       <Helmet>
         <title>
-          Anurag Pandey | Full Stack MERN Developer for Scalable Web Apps
+          Anurag Pandey | MERN Stack Developer | Freelance Software Engineer
         </title>
 
         <meta
           name="description"
-          content="Hire a Full Stack MERN Developer to build secure, scalable, and modern web applications. React, Node.js, MongoDB expert."
+          content="Anurag Pandey is a Full Stack MERN Developer and Freelance Software Engineer building secure, scalable, and modern web applications using React, Node.js, MongoDB, and Express."
         />
 
-        <meta
-          name="keywords"
-          content="Full Stack Developer, MERN Developer, React Developer, Node.js Developer, Freelancer Web Developer"
-        />
-
-        <meta property="og:title" content="Anurag Pandey | MERN Stack Developer" />
-        <meta
-          property="og:description"
-          content="Freelance Full Stack MERN Developer building real-world, production-ready web applications."
-        />
-        <meta property="og:type" content="website" />
+        <meta name="robots" content="index, follow" />
 
         <link
           rel="canonical"
           href="https://my-portfolio-wheat-zeta-89.vercel.app/"
         />
 
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Anurag Pandey | MERN Stack Developer & Freelancer"
+        />
+        <meta
+          property="og:description"
+          content="Portfolio of Anurag Pandey, a freelance MERN Stack Developer helping startups and businesses build scalable web applications."
+        />
+        <meta
+          property="og:url"
+          content="https://my-portfolio-wheat-zeta-89.vercel.app/"
+        />
+        <meta property="og:site_name" content="Anurag Pandey Portfolio" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Anurag Pandey | MERN Stack Developer"
+        />
+        <meta
+          name="twitter:description"
+          content="Freelance MERN Stack Developer & Software Engineer portfolio."
+        />
+
+        {/* Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify(schemaData)}
         </script>
@@ -116,7 +143,7 @@ function Home({ dark }) {
             initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Full Stack MERN Developer
+            Anurag Pandey - Full Stack MERN Developer
           </motion.h1>
 
           <motion.h2
@@ -124,7 +151,7 @@ function Home({ dark }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            I help businesses build{" "}
+            Freelance MERN Developer helping businesses build{" "}
             <span className={`font-mono ${gradientText}`}>
               <Typewriter
                 words={[
@@ -140,9 +167,10 @@ function Home({ dark }) {
           </motion.h2>
 
           <p className="max-w-3xl mx-auto text-lg opacity-80 mb-10">
-            I’m Anurag Pandey — a freelance MERN Stack Developer specializing in
-            building fast, secure, and scalable web applications for startups,
-            students, and businesses.
+            I'm <strong>Anurag Pandey</strong>, a freelance Full Stack MERN
+            Developer and Software Engineer. I help startups, students, and
+            businesses build fast, secure, and scalable web applications using
+            React, Node.js, MongoDB, and Express.
           </p>
 
           {/* CTA */}
@@ -151,7 +179,7 @@ function Home({ dark }) {
               to="/contact"
               className="px-8 py-3 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition"
             >
-              Hire Me
+              Hire Me for Your Project
             </Link>
             <Link
               to="/services"
@@ -170,18 +198,18 @@ function Home({ dark }) {
           {[
             {
               icon: <FaProjectDiagram />,
-              title: "5+ Projects",
-              desc: "Production-ready MERN apps",
+              title: "5+ Projects Delivered",
+              desc: "Production-ready MERN applications",
             },
             {
               icon: <FaAward />,
               title: "Best Project Award",
-              desc: "Recognized for real-world impact",
+              desc: "Recognized for real-world solutions",
             },
             {
               icon: <FaHandshake />,
-              title: "Freelancer Ready",
-              desc: "Client-focused development",
+              title: "Freelancer Friendly",
+              desc: "Clear communication & fast delivery",
             },
           ].map((item, i) => (
             <div
@@ -205,14 +233,14 @@ function Home({ dark }) {
           data-aos="fade-up"
         >
           <h2 className="text-3xl font-bold text-center mb-12">
-            Why Hire Me?
+            Why Hire Me as Your MERN Developer?
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              "Clean, scalable code architecture",
-              "Secure authentication & APIs",
-              "Clear communication & fast delivery",
+              "Clean, scalable, and maintainable code",
+              "Secure authentication & REST APIs",
+              "Client-focused communication & delivery",
             ].map((point, i) => (
               <div
                 key={i}
@@ -232,7 +260,7 @@ function Home({ dark }) {
           data-aos="fade-up"
         >
           <h2 className="text-3xl font-bold text-center mb-12">
-            Tech I Work With
+            Technologies I Work With
           </h2>
 
           <div className="flex justify-center gap-8 flex-wrap text-3xl text-purple-500">
@@ -252,10 +280,10 @@ function Home({ dark }) {
           data-aos="zoom-in"
         >
           <h2 className="text-3xl font-bold mb-4">
-            Ready to start your project?
+            Ready to Start Your Project?
           </h2>
           <p className="opacity-80 mb-6">
-            Let’s build something powerful together.
+            Let's build something powerful together.
           </p>
           <Link
             to="/contact"

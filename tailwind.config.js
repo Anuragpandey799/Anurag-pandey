@@ -32,19 +32,6 @@ export default {
       },
     },
 
-    screens: {
-      phone: "300px",
-      tab: "500px",
-
-      tablet: "750px",
-      // => @media (min-width: 640px) { ... }
-
-      laptop: "1000px",
-      // => @media (min-width: 1024px) { ... }
-
-      desktop: "1200px",
-      // => @media (min-width: 1280px) { ... }
-    },
   },
   plugins: [],
 };
