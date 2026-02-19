@@ -27,6 +27,7 @@ function About({ dark }) {
     "Images/myPhoto4.jpg",
     "Images/myPhoto5.jpg",
     "Images/myPhoto6.jpg",
+    "Images/myPhoto7.jpg",
   ];
 
   const randomPhoto = useMemo(() => {

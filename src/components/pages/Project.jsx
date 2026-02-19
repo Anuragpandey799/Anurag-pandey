@@ -32,7 +32,7 @@ export default function Projects({ dark }) {
       title: "PasteBin - Secure Paste Sharing Web App",
       description:
         "A fast and minimal paste-sharing web application to store and share code or text snippets securely. Focused on performance, clean UI, and ease of use. Ideal for developers to share content instantly.",
-      image: "Images/pastebin-screenshot.png",
+      image: "Images/PasteBin-screenshot.png",
       link: "https://pastebinn.vercel.app/",
       type: "live",
       tech: ["React.js", "Vercel", "UI/UX", "Web App"],
@@ -42,7 +42,7 @@ export default function Projects({ dark }) {
       title: "TaskSphere - Modern Task Management App",
       description:
         "A modern task management application that helps users organize, track, and manage daily tasks efficiently with a clean and responsive UI. Built with productivity and user experience in mind.",
-      image: "Images/tasksphere-screenshot.png",
+      image: "Images/TaskSphere-screenshot.png",
       link: "https://task-sphere-vert.vercel.app",
       type: "live",
       tech: ["React.js", "State Management", "Responsive UI"],
