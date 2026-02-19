@@ -34,7 +34,7 @@ const Main = () => {
             path="great scientist"
             element={<GreatIndianScientist dark={dark} />}
           />
-          <Route path="resume" element={<Resume dark={dark} />} />
+          {/* <Route path="resume" element={<Resume dark={dark} />} /> */}
           <Route path="blog" element={<Blog dark={dark} />} />
         </Route>
       </Routes>
