@@ -13,6 +13,7 @@ export default function Projects({ dark }) {
   const projects = [
     {
       title: "MediTech - Hospital Management System (Ongoing)",
+      role: "Full stack Developer",
       description:
         "A scalable MERN-based hospital management system with doctor appointment booking, patient records, admin dashboard, role-based authentication, and Razorpay payment integration. Designed for real-world healthcare workflows.",
       image: "Images/meditech-screenshot.png",
@@ -25,33 +26,109 @@ export default function Projects({ dark }) {
         "Tailwind CSS",
         "Razorpay",
         "JWT",
+        "State Management",
+        "Responsive Design",
+      ],
+    },
+
+    {
+      title: "CareOps - Healthcare Admin Dashboard",
+      role: "Full stack Developer",
+      description:
+        "A modern healthcare admin dashboard designed to manage hospital operations efficiently. Features include patient management, analytics overview, appointment tracking, and responsive UI with clean data visualization for better operational control.",
+      image: "Images/careops-screenshot.png",
+      link: "https://careopsadmin-anurag.vercel.app/",
+      type: "live",
+      tech: [
+        "React.js",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JWT",
+        "UI/UX Design",
+        "Routing",
+        "Dashboard UI",
+        "State Management",
+        "Responsive Design",
+      ],
+    },
+
+    {
+      title: "Megaplex Prime - Movie Booking Platform",
+      role: "Full stack Developer",
+      description:
+        "A modern movie booking web application with an interactive UI, movie listings, showtime selection, and responsive booking interface. Built to simulate real-world cinema ticket booking experience with smooth user interaction.",
+      image: "Images/megaplex-screenshot.png",
+      link: "https://megaplex-anurag.vercel.app/",
+      type: "live",
+      tech: [
+        "React.js",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JWT",
+        "UI/UX Design",
+        "Routing",
+        "Responsive Web App",
+      ],
+    },
+
+    {
+      title: "Mahindra Blossom - Real Estate Landing Page",
+      role: "Front-end Developer",
+      description:
+        "A premium real estate landing page designed for luxury property marketing. Features smooth scrolling, modern UI sections, call-to-action design, and conversion-focused layout. Built with performance optimization and responsive design in mind.",
+      image: "Images/mahindra-blossom-screenshot.png",
+      link: "https://anuragpandey799.github.io/Mahindra-Blossom/",
+      type: "live",
+      tech: [
+        "HTML5",
+        "CSS3",
+        "Bootstrap",
+        "Tailwind CSS",
+        "AOS",
+        "Responsive Design",
       ],
     },
 
     {
       title: "PasteBin - Secure Paste Sharing Web App",
+      role: "Full stack Developer",
       description:
-        "A fast and minimal paste-sharing web application to store and share code or text snippets securely. Focused on performance, clean UI, and ease of use. Ideal for developers to share content instantly.",
+        "A fast and minimal paste-sharing web application to store and share code or text snippets securely. Focused on performance, clean UI, Redis-based storage, and ease of use. Ideal for developers to share content instantly.",
       image: "Images/PasteBin-screenshot.png",
       link: "https://pastebinn.vercel.app/",
       type: "live",
-      tech: ["React.js", "Vercel", "UI/UX", "Web App"],
+      tech: ["Next.js", "Redis", "Tailwind CSS", "Vercel", "UI/UX", "Web App"],
     },
 
     {
       title: "TaskSphere - Modern Task Management App",
+      role: "Full stack Developer",
       description:
-        "A modern task management application that helps users organize, track, and manage daily tasks efficiently with a clean and responsive UI. Built with productivity and user experience in mind.",
+        "A modern task management application that helps users organize, track, and manage daily tasks efficiently with a clean and responsive UI. Built with productivity, state management, and user experience in mind.",
       image: "Images/TaskSphere-screenshot.png",
       link: "https://task-sphere-vert.vercel.app",
       type: "live",
-      tech: ["React.js", "State Management", "Responsive UI"],
+      tech: [
+        "React.js",
+        "Tailwind CSS",
+        "MongoDB",
+        "Express.js",
+        "Node.js",
+        "JWT Authentication",
+        "State Management",
+        "Responsive UI",
+      ],
     },
 
     {
       title: "Portfolio Website",
+      role: "Front-end Developer",
       description:
-        "My personal portfolio showcasing projects, skills, blogs, and contact details. Built with React and Tailwind CSS featuring dark mode, smooth animations, and a highly interactive user experience.",
+        "My personal portfolio showcasing projects, skills, blogs, and contact details. Built with React and Tailwind CSS featuring dark mode, smooth animations, Framer Motion transitions, and a highly interactive user experience.",
       image: "Images/portfolioScreenshot.png",
       link: "https://my-portfolio-wheat-zeta-89.vercel.app/",
       type: "live",
@@ -66,22 +143,24 @@ export default function Projects({ dark }) {
 
     {
       title: "BBMS - Blood Bank Management System",
+      role: "Full stack Developer",
       description:
-        "A PHP-based blood bank management system to manage donors, blood inventory, and requests. Includes admin and donor dashboards with a structured database design.",
+        "A PHP-based blood bank management system to manage donors, blood inventory, and blood requests. Includes admin and donor dashboards with structured database architecture and real-time record management.",
       image: "Images/bbms-Screenshot.png",
       link: "https://anubloodbank.free.nf/",
       type: "live",
-      tech: ["PHP", "MySQL", "Bootstrap"],
+      tech: ["PHP", "MySQL", "Bootstrap", "AOS", "XAMPP Server"],
     },
 
     {
       title: "MedLink - Healthcare Service Platform",
+      role: "Full stack Developer",
       description:
-        "A healthcare web platform providing appointment booking, doctor consultations, and prescription management. Built as a full-stack academic project with real-world healthcare use cases.",
+        "A healthcare web platform providing appointment booking, doctor consultations, and prescription management. Built as a full-stack academic project demonstrating real-world healthcare service workflows.",
       image: "Images/medLink-Screenshot.png",
       link: "https://github.com/Anuragpandey799/MedLink-All-Medical-Services-At-One-Click",
       type: "code",
-      tech: ["PHP", "MySQL", "Bootstrap", "AOS"],
+      tech: ["PHP", "MySQL", "Bootstrap", "AOS", "XAMPP Server"],
     },
   ];
 
@@ -152,7 +231,7 @@ export default function Projects({ dark }) {
 
                 {/* CONTENT */}
                 <div>
-                  <h3 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                  <h3 className="text-3xl font-bold mb-2 flex items-center gap-3">
                     {proj.title}
                     {proj.link && (
                       <a
@@ -165,6 +244,12 @@ export default function Projects({ dark }) {
                       </a>
                     )}
                   </h3>
+
+                  {proj.role && (
+                    <p className="text-sm font-semibold text-pink-500 mb-4">
+                      {proj.role}
+                    </p>
+                  )}
 
                   <p className="mb-6 leading-relaxed text-lg opacity-90">
                     {proj.description}

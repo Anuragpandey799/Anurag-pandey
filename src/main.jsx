@@ -16,7 +16,7 @@ import Blog from "./components/pages/Blog.jsx";
 import Services from "./components/pages/Services.jsx";
 
 const Main = () => {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
 
   return (
     <Router
