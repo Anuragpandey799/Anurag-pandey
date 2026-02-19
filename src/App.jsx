@@ -57,7 +57,10 @@ function App({ dark = false, setDark = () => {} }) {
               <link rel="canonical" href={`${siteUrl}${location.pathname}`} />
 
               {/* Open Graph */}
-              <meta property="og:title" content="Anurag Pandey | MERN Stack Developer" />
+              <meta
+                property="og:title"
+                content="Anurag Pandey | MERN Stack Developer"
+              />
               <meta
                 property="og:description"
                 content="Portfolio of Anurag Pandey - MERN Stack Developer building scalable and modern web applications."
@@ -68,7 +71,10 @@ function App({ dark = false, setDark = () => {} }) {
 
               {/* Twitter */}
               <meta name="twitter:card" content="summary_large_image" />
-              <meta name="twitter:title" content="Anurag Pandey | MERN Stack Developer" />
+              <meta
+                name="twitter:title"
+                content="Anurag Pandey | MERN Stack Developer"
+              />
               <meta
                 name="twitter:description"
                 content="Freelance MERN Stack Developer skilled in React, Node.js, MongoDB, and UI/UX."
@@ -116,8 +122,7 @@ function App({ dark = false, setDark = () => {} }) {
             <main className="min-h-screen pt-16">
               <Outlet />
 
-              {/* Resume ONLY on homepage (SEO FIX) */}
-              {isHomePage && <Resume dark={dark} />}
+              <Resume dark={dark} />
             </main>
 
             <Footer dark={dark} />
