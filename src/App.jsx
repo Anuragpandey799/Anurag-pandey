@@ -5,11 +5,11 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import SideBar from "./components/pages/SideBar";
-import Preloader from "./components/PreLoader";
-import Resume from "./components/pages/Resume";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import SideBar from "./components/layout/SideBar";
+import Preloader from "./components/layout/PreLoader";
+import Resume from "./components/layout/Resume";
 
 import AnimatedCursor from "react-animated-cursor";
 
