@@ -29,7 +29,7 @@ const Main = () => {
 
   return (
     <Router
-      basename={process.env.NODE_ENV === "production" ? "/" : "/my_portfolio"}
+      basename={process.env.NODE_ENV === "production" ? "/" : ""}
     >
       <ScrollToTop />
       <Routes>
