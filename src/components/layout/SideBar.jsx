@@ -2,6 +2,7 @@ import {
   faSquareGithub,
   faLinkedin,
   faYoutube,
+  faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -48,14 +49,20 @@ export default function SideBar({ dark }) {
     {
       icon: faEnvelope,
       label: "Email - Contact for Freelance Work",
-      url: "mailto:anuhackerag799@gmail.com",
+      url: "mailto:anurag.application799@gmail.com",
       color: "hover:text-green-500",
     },
     {
       icon: faYoutube,
-      label: "YouTube - Web Development Content",
-      url: "https://www.youtube.com/@anuragpandey9337",
+      label: "YouTube - Web Development Content | Techie Anurag",
+      url: "https://www.youtube.com/@Techie.Anurag",
       color: "hover:text-red-500",
+    },
+    {
+      icon: faTwitter,
+      label: "Twitter (X) - Web Development Content | Techie Anurag",
+      url: "https://x.com/Techie_Anurag_P",
+      color: "hover:text-blue-700",
     },
   ];
 

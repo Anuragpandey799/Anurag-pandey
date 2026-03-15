@@ -2,9 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faFacebook,
   faInstagram,
   faLinkedin,
   faSquareGithub,
+  faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -115,7 +117,7 @@ function Footer({ dark }) {
           </a>
 
           <a
-            href="https://www.youtube.com/@anuragpandey9337"
+            href="https://www.youtube.com/@Techie.Anurag"
             target="_blank"
             rel="noreferrer"
             aria-label="YouTube Channel"
@@ -125,13 +127,31 @@ function Footer({ dark }) {
           </a>
 
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/logicluminaryanurag"
             target="_blank"
             rel="noreferrer"
             aria-label="Instagram Profile"
             className="text-xl hover:scale-110 transition"
           >
             <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a
+            href="https://x.com/Techie_Anurag_P"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Twitter (X) Profile"
+            className="text-xl hover:scale-110 transition"
+          >
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61588228446532"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Facebook Profile"
+            className="text-xl hover:scale-110 transition"
+          >
+            <FontAwesomeIcon icon={faFacebook} />
           </a>
         </div>
 
@@ -141,7 +161,7 @@ function Footer({ dark }) {
             <span className="hover:underline cursor-pointer">Privacy Policy</span>
             <span className="hover:underline cursor-pointer">Terms of Service</span>
           </div>
-          © 2025 Anurag Pandey — MERN Stack Developer. All rights reserved.
+          © 2026 Anurag Pandey — MERN Stack Developer. All rights reserved.
         </div>
       </div>
     </footer>
