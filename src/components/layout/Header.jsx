@@ -39,7 +39,7 @@ function Navbar({ dark, setDark }) {
               <img
                 src="Images/logo5.png"
                 alt="Anurag's Logo"
-                className="h-12 w-auto rounded-xl shadow-md"
+                className="h-14 w-auto rounded-xl shadow-md"
               />
 
               <Link

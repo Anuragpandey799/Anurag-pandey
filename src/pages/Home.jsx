@@ -138,6 +138,8 @@ function Home({ dark }) {
 
         {/* ================= HERO ================= */}
         <main className="relative z-10 text-center px-6 py-24">
+         <div className="flex flex-col items-center">
+           <img src="Images/myPhoto2.jpg" alt="" className="w-40 md:w-60 rounded-full  border-2 mb-6 " />
           <motion.h1
             className={`text-3xl sm:text-4xl font-extrabold mb-4 ${gradientText}`}
             initial={{ opacity: 0, y: -40 }}
@@ -145,6 +147,7 @@ function Home({ dark }) {
           >
             Anurag Pandey - Full Stack MERN Developer
           </motion.h1>
+         </div>
 
           <motion.h2
             className="text-xl sm:text-2xl font-semibold mb-6"
@@ -298,3 +301,6 @@ function Home({ dark }) {
 }
 
 export default Home;
+
+
+
