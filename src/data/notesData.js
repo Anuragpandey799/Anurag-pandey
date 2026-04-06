@@ -110,13 +110,13 @@ export const notesData = {
         link: `/notes/cn/unit2.pdf`,
         unit: "Unit 2",
       },
-      //   {
-      //     id: "cn3",
-      //     title: "Unit 3 - TCP/IP Model",
-      //     type: "pdf",
-      //     link: `/notes/cn/tcp-ip.pdf`,
-      //     unit: "Unit 3",
-      //   },
+        {
+          id: "cn3",
+          title: "Unit 3 - TCP/IP Model",
+          type: "pdf",
+          link: `/notes/cn/unit3-DataLinkLayer.pdf`,
+          unit: "Unit 3",
+        },
       //   {
       //     id: "cn4",
       //     title: "Unit 4 - Routing Algorithms",
