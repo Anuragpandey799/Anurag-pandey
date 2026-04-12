@@ -65,13 +65,13 @@ export const notesData = {
         link: `/notes/dbms/unit2.pdf`,
         unit: "Unit 2",
       },
-      //   {
-      //     id: "db3",
-      //     title: "Unit 3 - Relational Model",
-      //     type: "pdf",
-      //     link: `/notes/dbms/relational-model.pdf`,
-      //     unit: "Unit 3",
-      //   },
+        {
+          id: "db3",
+          title: "Unit 3 - Relational Algebra",
+          type: "pdf",
+          link: `/notes/dbms/unit3-RelationalAlgebra.pdf`,
+          unit: "Unit 3",
+        },
       //   {
       //     id: "db4",
       //     title: "Unit 4 - Normalization",
@@ -117,13 +117,13 @@ export const notesData = {
           link: `/notes/cn/unit3-DataLinkLayer.pdf`,
           unit: "Unit 3",
         },
-      //   {
-      //     id: "cn4",
-      //     title: "Unit 4 - Routing Algorithms",
-      //     type: "pdf",
-      //     link: `/notes/cn/routing.pdf`,
-      //     unit: "Unit 4",
-      //   },
+        {
+          id: "cn4",
+          title: "Unit 4 - Network Layer",
+          type: "pdf",
+          link: `/notes/cn/unit4-NetworkLayer.pdf`,
+          unit: "Unit 4",
+        },
       //   {
       //     id: "cn5",
       //     title: "Unit 5 - Network Security",
