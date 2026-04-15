@@ -124,13 +124,13 @@ export const notesData = {
           link: `/notes/cn/unit4-NetworkLayer.pdf`,
           unit: "Unit 4",
         },
-      //   {
-      //     id: "cn5",
-      //     title: "Unit 5 - Network Security",
-      //     type: "pdf",
-      //     link: `/notes/cn/network-security.pdf`,
-      //     unit: "Unit 5",
-      //   },
+        {
+          id: "cn5",
+          title: "Unit 5 - Physical Layer",
+          type: "pdf",
+          link: `/notes/cn/unit5-PhysicalLayer.pdf`,
+          unit: "Unit 5",
+        },
     ],
   },
 
