@@ -65,13 +65,13 @@ export const notesData = {
         link: `/notes/dbms/unit2.pdf`,
         unit: "Unit 2",
       },
-        {
-          id: "db3",
-          title: "Unit 3 - Relational Algebra",
-          type: "pdf",
-          link: `/notes/dbms/unit3-RelationalAlgebra.pdf`,
-          unit: "Unit 3",
-        },
+      {
+        id: "db3",
+        title: "Unit 3 - Relational Algebra",
+        type: "pdf",
+        link: `/notes/dbms/unit3-RelationalAlgebra.pdf`,
+        unit: "Unit 3",
+      },
       //   {
       //     id: "db4",
       //     title: "Unit 4 - Normalization",
@@ -110,27 +110,27 @@ export const notesData = {
         link: `/notes/cn/unit2.pdf`,
         unit: "Unit 2",
       },
-        {
-          id: "cn3",
-          title: "Unit 3 - TCP/IP Model",
-          type: "pdf",
-          link: `/notes/cn/unit3-DataLinkLayer.pdf`,
-          unit: "Unit 3",
-        },
-        {
-          id: "cn4",
-          title: "Unit 4 - Network Layer",
-          type: "pdf",
-          link: `/notes/cn/unit4-NetworkLayer.pdf`,
-          unit: "Unit 4",
-        },
-        {
-          id: "cn5",
-          title: "Unit 5 - Physical Layer",
-          type: "pdf",
-          link: `/notes/cn/unit5-PhysicalLayer.pdf`,
-          unit: "Unit 5",
-        },
+      {
+        id: "cn3",
+        title: "Unit 3 - TCP/IP Model",
+        type: "pdf",
+        link: `/notes/cn/unit3-DataLinkLayer.pdf`,
+        unit: "Unit 3",
+      },
+      {
+        id: "cn4",
+        title: "Unit 4 - Network Layer",
+        type: "pdf",
+        link: `/notes/cn/unit4-NetworkLayer.pdf`,
+        unit: "Unit 4",
+      },
+      {
+        id: "cn5",
+        title: "Unit 5 - Physical Layer",
+        type: "pdf",
+        link: `/notes/cn/unit5-PhysicalLayer.pdf`,
+        unit: "Unit 5",
+      },
     ],
   },
 
@@ -179,48 +179,48 @@ export const notesData = {
   //     ],
   //   },
 
-  //   java: {
-  //     title: "Java Programming",
-  //     description:
-  //       "Study Java programming including OOP concepts, inheritance, exception handling and collections.",
-  //     icon: "☕",
+    java: {
+      title: "Java Programming",
+      description:
+        "Study Java programming including OOP concepts, inheritance, exception handling and collections.",
+      icon: "☕",
 
-  //     notes: [
-  //       {
-  //         id: "java1",
-  //         title: "Unit 1 - Introduction to Java",
-  //         type: "pdf",
-  //         link: `/notes/java/introduction.pdf`,
-  //         unit: "Unit 1",
-  //       },
-  //       {
-  //         id: "java2",
-  //         title: "Unit 2 - Classes and Objects",
-  //         type: "pdf",
-  //         link: `/notes/java/classes-objects.pdf`,
-  //         unit: "Unit 2",
-  //       },
-  //       {
-  //         id: "java3",
-  //         title: "Unit 3 - Inheritance and Polymorphism",
-  //         type: "pdf",
-  //         link: `/notes/java/inheritance-polymorphism.pdf`,
-  //         unit: "Unit 3",
-  //       },
-  //       {
-  //         id: "java4",
-  //         title: "Unit 4 - Exception Handling",
-  //         type: "pdf",
-  //         link: `/notes/java/exception-handling.pdf`,
-  //         unit: "Unit 4",
-  //       },
-  //       {
-  //         id: "java5",
-  //         title: "Unit 5 - Collections Framework",
-  //         type: "pdf",
-  //         link: `/notes/java/collections.pdf`,
-  //         unit: "Unit 5",
-  //       },
-  //     ],
-  //   },
+      notes: [
+        {
+          id: "java1",
+          title: "Unit 1 - Unit 6 (introduction, Basics of java, Control statements, Arrays, Strings, Methods)",
+          type: "pdf",
+          link: `/notes/java/javaCompleteNotes01-06.pdf`,
+          unit: "Unit 1",
+        },
+        {
+          id: "java2",
+          title: "OOPs in Java",
+          type: "pdf",
+          link: `/notes/java/OOPs-in-java.pdf`,
+          unit: "Unit 2",
+        },
+        // {
+        //   id: "java3",
+        //   title: "Unit 3 - Inheritance and Polymorphism",
+        //   type: "pdf",
+        //   link: `/notes/java/inheritance-polymorphism.pdf`,
+        //   unit: "Unit 3",
+        // },
+        // {
+        //   id: "java4",
+        //   title: "Unit 4 - Exception Handling",
+        //   type: "pdf",
+        //   link: `/notes/java/exception-handling.pdf`,
+        //   unit: "Unit 4",
+        // },
+        // {
+        //   id: "java5",
+        //   title: "Unit 5 - Collections Framework",
+        //   type: "pdf",
+        //   link: `/notes/java/collections.pdf`,
+        //   unit: "Unit 5",
+        // },
+      ],
+    },
 };
